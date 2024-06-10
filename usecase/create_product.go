@@ -1,10 +1,12 @@
 package usecase
 
-import "github/chrislcontrol/go-simple-api/entities"
+import (
+	"github/chrislcontrol/go-simple-api/entity"
+	"github/chrislcontrol/go-simple-api/repository"
+)
 
-func CreateProduct(name string, price float64) entities.Product {
-	return entities.Product{
-		Name:  name,
-		Price: price,
-	}
+func CreateProduct(name string, price float64) entity.Product {
+	repo := repository.ProductRepository{}
+
+	return repo.Create(name, price)
 }

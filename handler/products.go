@@ -1,8 +1,8 @@
-package views
+package handler
 
 import (
 	"encoding/json"
-	"github/chrislcontrol/go-simple-api/controllers"
+	"github/chrislcontrol/go-simple-api/controller"
 	"net/http"
 )
 
@@ -25,7 +25,7 @@ func Products(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	product := controllers.CreateProduct(requestBody.Name, requestBody.Price)
+	product := controller.CreateProduct(requestBody.Name, requestBody.Price)
 
 	w.Header().Add("Content-Type", "application/json")
 

@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"github/chrislcontrol/go-simple-api/views"
+	"github/chrislcontrol/go-simple-api/handler"
 
 	"github.com/gorilla/mux"
 )
@@ -9,8 +9,8 @@ import (
 func RouterV1() *mux.Router {
 	API_V1 := "/api/v1"
 	router := mux.NewRouter()
-	router.HandleFunc(API_V1+"/home", views.Home).Methods("GET")
-	router.HandleFunc(API_V1+"/products", views.Products).Methods("POST")
+	router.HandleFunc(API_V1+"/home", handler.Home).Methods("GET")
+	router.HandleFunc(API_V1+"/products", handler.Products).Methods("POST")
 
 	return router
 }
